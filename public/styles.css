@@ -17,8 +17,8 @@ body {
 
 /* HEADER */
 header {
-    background: #000000ad;
-    color: white;
+    background: #080808ce;
+    color: rgb(250, 247, 247);
 }
 
 /* TOPO */
@@ -39,7 +39,7 @@ header {
 }
 
 .topo-principal h1 {
-    text-shadow: #000;
+    text-shadow: #ffffff;
     font-size: 32px;
     white-space: nowrap;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -49,31 +49,41 @@ header {
     padding: 6px;
     width: 350px;
     margin-top: 10px;
+    background-color: #616161;
+    border-radius: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* MENU HORIZONTAL alteração */
 .menu-lateral-e {
     background: #111;
-    padding: 5px 10px;
+    padding: 3px 10px;
 }
 
 .menu-lateral-e ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 50px;
     padding: 10px;
     margin: 0;
+    word-spacing: 30px;
 }
 
 .menu-lateral-e li {
     padding: 5px 10px;
 }
 
+.menu-lateral-e li:not(:last-child)::after {
+  content: "|";
+  margin-left: 40px;
+  margin-right: auto;
+  color: #999;
+}
 .menu-lateral-e a {
     text-decoration: none;
     color: white;
-    font-size: 16px;
+    font-size:small;
 }
 
 .menu-lateral-e a:hover {
@@ -81,6 +91,12 @@ header {
 }
 
 /* MAIN */
+.introducao{
+    padding-bottom: 25px;
+    text-align: justify;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(85, 82, 82);
+}
 .conteudoprincipal {
     flex: 1;
     padding: 30px;
