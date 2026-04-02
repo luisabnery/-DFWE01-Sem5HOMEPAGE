@@ -1,16 +1,17 @@
 /* RESET */
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* CONTAINER PRINCIPAL */
+/* CONTAINER PRINCIPAL
 .container {
     display: flex;
     align-items: flex-start;
     gap: 20px;
 }
+*/
 
 /* BODY */
 body {
@@ -26,8 +27,8 @@ header {
 
 /* TOPO */
 .topo-principal {
-    display: flex;
-    align-items: center;
+    /*display: flex;
+    align-items: center;*/
     padding: 10px 40px;
 }
 
@@ -38,7 +39,7 @@ header {
 
 /* TÍTULO + BUSCA */
 .titulo-busca {
-    margin-left: 80px;
+    margin-left: 20px;
 }
 
 .topo-principal h1 {
@@ -49,7 +50,8 @@ header {
 
 .topo-principal input {
     padding: 6px;
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
     margin-top: 10px;
     background-color: #616161;
     border-radius: 20px;
@@ -63,11 +65,11 @@ header {
 
 .menu-lateral-e ul {
     list-style: none;
-    display: flex;
+    padding: 10px;
+    /*display: flex;
     justify-content: center;
     gap: 50px;
-    padding: 10px;
-    flex-wrap: wrap;
+    flex-wrap: wrap;*/
 }
 
 .menu-lateral-e li {
@@ -99,7 +101,7 @@ header {
 }
 
 .conteudoprincipal {
-    flex: 1;
+    /*flex: 1;*/
     min-width: 0;
 }
 
@@ -110,10 +112,9 @@ header {
 
 .conteudoprincipal p {
     padding: 10px;
-    text-justify: newspaper;
     color: #999;
 }
-}
+
 /* PARTIDAS */
 .partidas h2 {
     padding: 20px;
@@ -124,7 +125,7 @@ header {
 
 .todos-os-cards {
     padding-left: 25px;
-    display: flex;
+    /*display: flex;
     gap: 20px;
     flex-wrap: wrap;
 }
@@ -132,13 +133,13 @@ header {
 .todos-os-cards article {
     width: 238px;
 }
-
+*/
 .todos-os-cards img {
     width: 100%;
     border-radius: 5px;
     border: 3px rgba(0, 0, 0, 0.555) solid;
 }
-
+*/
 /* NOTÍCIAS */
 .noticias h2 {
     padding: 20px;
@@ -146,7 +147,7 @@ header {
     font-family: Verdana;
     color: goldenrod;
 }
-
+/*
 .imagensnoticias {
     padding-left: 25px;
     display: grid;
@@ -154,32 +155,32 @@ header {
     grid-template-rows: 250px 150px;
     gap: 10px;
 }
-
-/* ESQUERDA GRANDE */
+*/
+/* ESQUERDA GRANDE 
 .imagensnoticias .noticia01 {
     grid-column: 1;
     grid-row: 1 / 3;
 }
 
-/* CENTRO TOPO */
+/* CENTRO TOPO 
 .imagensnoticias .noticia02 {
     grid-column: 2;
     grid-row: 1;
 }
 
-/* CENTRO BAIXO */
+/* CENTRO BAIXO 
 .imagensnoticias .noticia03 {
     grid-column: 2;
     grid-row: 2;
 }
 
-/* DIREITA BAIXO */
+/* DIREITA BAIXO 
 .imagensnoticias .noticia04 {
     grid-column: 3;
     grid-row: 2;
 }
 
-/* DIREITA GRANDE */
+/* DIREITA GRANDE 
 .imagensnoticias .noticia05 {
     grid-column: 3;
     grid-row: 1 / 3;
@@ -209,11 +210,11 @@ header {
 
 .todos-os-cards-video {
     padding-left: 25px;
-    display: flex;
+    /* display: flex; 
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 15px; */
 }
-
+/*
 .todos-os-cards-video article {
     width: 235px;
 }
@@ -221,28 +222,26 @@ header {
 .todos-os-cards-video img {
     width: 100%;
 }
-
+*/
 /* LATERAL DIREITA */
 .lateral-direita {
-    width: 300px;
+    /*width: 300px;*/
     background: rgba(185, 132, 26, 0.952);
     padding: 10px;
 }
 
 .tags {
+    padding: 20px 0;
     border-radius: 3px;
     border: dashed rgb(255, 249, 196) 2px;
-    padding-bottom: 200px;
     margin-top: 5px;
     margin-bottom: 20px;
 }
 
 .lateral-direita img {
+    display: block;
+    margin: 20px auto;
     width: 80%;
-    padding: 60px 10px;
-    padding-left: 50px;
-    align-items: center;
-    margin: 0 auto;
 }
 
 /* NEWSLETTER */
@@ -290,16 +289,17 @@ form button {
     padding: 20px;
     margin-bottom: 5px;
 }
-
+/*
 .patrocinadoresinferior {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-}
+}*/
 
 .patrocinadoresinferior img {
-    width: 125px;
+   max-width: 100%;
+    height: auto;
 }
 
 /* FOOTER */
@@ -311,7 +311,7 @@ footer {
 }
 
 /* RESPONSIVIDADE */
-
+/*
 @media screen and (max-width: 768px) {
 
     .container {
@@ -355,9 +355,7 @@ footer {
 
     .lateral-direita img {
         width: 70%;
-        /* diminui o tamanho */
         max-width: 180px;
-        /* limite máximo */
         padding: 10px 0;
         display: block;
         margin: 0 auto;
@@ -415,7 +413,7 @@ footer {
         font-size: small;
     }
 
-    /*PARTIDAS*/
+    /*PARTIDAS
     .partidas h2 {
         margin: 10px;
         padding-left: 30px;
@@ -443,7 +441,7 @@ footer {
     }
 
 
-    /* NOTICIAS*/
+    /* NOTICIAS
     .todos-os-cards article,
     .todos-os-cards-video article {
         width: 100%;
@@ -470,7 +468,7 @@ footer {
         object-fit: contain;
     }
 
-    /* IMAGENS */
+    /* IMAGENS 
     .imagensnoticias img {
         width: 100%;
         height: auto;
@@ -483,7 +481,7 @@ footer {
         grid-row: auto !important;
     }
 
-    /* LATERAIS GRANDES*/
+    /* LATERAIS GRANDES
     .imagensnoticias .noticia01 {
         grid-column: 1;
         grid-row: 1 / 2;
@@ -494,7 +492,7 @@ footer {
         grid-row: 1/2;
     }
 
-    /*MEIO PEQUENO*/
+    /*MEIO PEQUENO
     .imagensnoticias .noticia03 {
         grid-column: 2;
         grid-row: 2;
@@ -511,13 +509,13 @@ footer {
         width: 100%;
     }
 
-    /*MEIO HORIZONTAL*/
+    /*MEIO HORIZONTAL
     .imagensnoticias .noticia05 {
         grid-column: 2/4;
         grid-row: 1;
     }
 
-    /*VÍDEOS*/
+    /*VÍDEOS
     .videos h2 {
         margin: 10px;
         padding-left: 35%;
@@ -558,3 +556,4 @@ footer {
         grid-column: 2;
     }
 }
+    */
