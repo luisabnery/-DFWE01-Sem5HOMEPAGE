@@ -1,559 +1,311 @@
-/* RESET */
-*{
+/* =============================================================
+   styles.css — Clube Atlético Mineiro
+   IMPORTANTE: Este arquivo contém APENAS estilos visuais (cores,
+   fontes, bordas, espaçamentos de tema).
+   Toda a lógica de layout e responsividade é feita pelo Bootstrap
+   (col-12, col-md-8, d-flex, etc.) diretamente no HTML.
+   NÃO há media queries aqui — o Bootstrap cuida disso.
+============================================================= */
+
+
+/* RESET BÁSICO
+   Zera margens e paddings padrão do navegador.
+   box-sizing: border-box faz o padding ser incluído na largura total,
+   evitando que elementos "estourem" o layout.
+*/
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* CONTAINER PRINCIPAL
-.container {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-}
-*/
 
-/* BODY */
+/* BODY
+   Fonte base e cor de fundo da página.
+*/
 body {
     font-family: Arial, sans-serif;
     background: #f5f1f1;
 }
 
-/* HEADER */
+
+/* =============================================
+   HEADER
+   Fundo escuro com texto claro — identidade visual do Galo.
+============================================= */
 header {
     background: #080808ce;
     color: rgb(250, 247, 247);
 }
 
-/* TOPO */
+
+/* TOPO PRINCIPAL
+   O layout (d-flex, align-items-center) está no HTML via Bootstrap.
+   Aqui só definimos o padding lateral do bloco.
+*/
 .topo-principal {
-    /*display: flex;
-    align-items: center;*/
     padding: 10px 40px;
 }
 
 /* LOGO */
-.topo-principal img {
+.logo-galo {
     width: 100px;
 }
 
-/* TÍTULO + BUSCA */
-.titulo-busca {
-    margin-left: 20px;
-}
-
+/* TÍTULO h1 */
 .topo-principal h1 {
     font-size: 32px;
-    white-space: nowrap;
+    white-space: nowrap; /* impede quebra de linha no título */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.topo-principal input {
+/* CAMPO DE BUSCA */
+.campo-busca {
     padding: 6px;
     width: 100%;
     max-width: 350px;
     margin-top: 10px;
     background-color: #616161;
     border-radius: 20px;
+    border: none;
+    color: white;
 }
 
-/* MENU */
-.menu-lateral-e {
+.campo-busca::placeholder {
+    color: #ccc;
+}
+
+
+/* =============================================
+   NAVEGAÇÃO (substituiu o menu-lateral-e)
+   O menu era pensado como lateral, mas foi convertido
+   para barra horizontal. O d-flex está no HTML.
+============================================= */
+.menu-nav {
     background: #111;
     padding: 3px 10px;
 }
 
-.menu-lateral-e ul {
-    list-style: none;
-    padding: 10px;
-    /*display: flex;
-    justify-content: center;
-    gap: 50px;
-    flex-wrap: wrap;*/
+.menu-nav ul {
+    /* list-unstyled e d-flex estão no HTML via Bootstrap */
+    gap: 0; /* espaçamento controlado pelo gap-2 no HTML */
 }
 
-.menu-lateral-e li {
+.menu-nav li {
     padding: 5px 10px;
+    /* Separador visual entre itens com ::after */
 }
 
-.menu-lateral-e li:not(:last-child)::after {
+/* Pipe ( | ) entre os itens, exceto o último */
+.menu-nav li:not(:last-child)::after {
     content: "|";
     margin-left: 20px;
     color: #999;
 }
 
-.menu-lateral-e a {
+.menu-nav a {
     text-decoration: none;
     color: white;
     font-size: small;
 }
 
-.menu-lateral-e a:hover {
-    color: rgb(238, 189, 56);
+.menu-nav a:hover {
+    color: rgb(238, 189, 56); /* dourado — cor temática do Galo */
 }
 
-/* MAIN */
+
+/* =============================================
+   INTRODUÇÃO
+   Banner + texto descritivo do clube.
+   img-fluid e w-100 já estão no HTML via Bootstrap.
+============================================= */
 .introducao {
     padding: 20px;
     padding-bottom: 25px;
-    text-align: justify;
-    color: rgb(85, 82, 82);
 }
 
-.conteudoprincipal {
-    /*flex: 1;*/
-    min-width: 0;
-}
-
-.conteudoprincipal img {
-    width:100%;
-    height:auto;
-}
-
-.conteudoprincipal p {
+.texto-intro {
     padding: 10px;
-    color: #999;
+    color: #555;
+    text-align: justify;
+    line-height: 1.6;
 }
 
-/* PARTIDAS */
-.partidas h2 {
-    padding: 20px;
-    margin-bottom: 5px;
-    font-family: Verdana;
+
+/* =============================================
+   TÍTULO DAS SEÇÕES
+   Estilo padrão para h2 das seções (Partidas, Notícias, etc.)
+============================================= */
+.secao-titulo {
+    padding: 10px 0;
+    margin-bottom: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: goldenrod;
+    border-bottom: 2px solid goldenrod;
 }
 
-.todos-os-cards {
-    padding-left: 25px;
-    /*display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+
+/* =============================================
+   CARDS DE PARTIDAS
+   Estilo visual dos cards — layout já tratado pelo Bootstrap (col-md-4)
+============================================= */
+.card-partida {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    padding-bottom: 10px;
 }
 
-.todos-os-cards article {
-    width: 238px;
-}
-*/
-.todos-os-cards img {
+.card-partida img {
     width: 100%;
-    border-radius: 5px;
-    border: 3px rgba(0, 0, 0, 0.555) solid;
-}
-*/
-/* NOTÍCIAS */
-.noticias h2 {
-    padding: 20px;
-    margin-bottom: 5px;
-    font-family: Verdana;
-    color: goldenrod;
-}
-/*
-.imagensnoticias {
-    padding-left: 25px;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 250px 150px;
-    gap: 10px;
-}
-*/
-/* ESQUERDA GRANDE 
-.imagensnoticias .noticia01 {
-    grid-column: 1;
-    grid-row: 1 / 3;
+    height: auto;
 }
 
-/* CENTRO TOPO 
-.imagensnoticias .noticia02 {
-    grid-column: 2;
-    grid-row: 1;
+.card-partida h3 {
+    font-size: 0.95rem;
+    padding: 10px 10px 4px;
+    color: #222;
 }
 
-/* CENTRO BAIXO 
-.imagensnoticias .noticia03 {
-    grid-column: 2;
-    grid-row: 2;
+.card-partida p {
+    font-size: 0.85rem;
+    padding: 0 10px;
+    color: #777;
 }
 
-/* DIREITA BAIXO 
-.imagensnoticias .noticia04 {
-    grid-column: 3;
-    grid-row: 2;
-}
 
-/* DIREITA GRANDE 
-.imagensnoticias .noticia05 {
-    grid-column: 3;
-    grid-row: 1 / 3;
-}
-
-/* IMAGENS */
-.imagensnoticias img {
-    width: 100%;
+/* =============================================
+   NOTÍCIAS
+   Imagem grande alinhada à esquerda, sem altura fixa no mobile.
+============================================= */
+.img-noticia-grande {
+    /* Em desktop, iguala a altura com o bloco de notícias menores */
     height: 100%;
     object-fit: cover;
-    border-radius: 5px;
-    border: 3px rgba(0, 0, 0, 0.555) solid;
 }
 
-/* VÍDEOS */
-.videos {
-    margin-top: 25px;
+
+/* =============================================
+   VÍDEOS
+   Links clicáveis com hover sutil
+============================================= */
+.video-link {
+    display: block;
+    text-decoration: none;
+    color: #222;
 }
 
-.videos h2 {
-    margin-bottom: 10px;
-    font-family: Verdana;
-    color: goldenrod;
-    padding: 20px;
-    margin-bottom: 5px;
-}
-
-.todos-os-cards-video {
-    padding-left: 25px;
-    /* display: flex; 
-    flex-wrap: wrap;
-    gap: 15px; */
-}
-/*
-.todos-os-cards-video article {
-    width: 235px;
-}
-
-.todos-os-cards-video img {
+.video-link img {
     width: 100%;
+    border-radius: 6px;
+    transition: opacity 0.2s;
 }
-*/
-/* LATERAL DIREITA */
+
+.video-link:hover img {
+    opacity: 0.85;
+}
+
+.video-link h4 {
+    font-size: 0.9rem;
+    padding: 6px 2px;
+    color: #333;
+}
+
+
+/* =============================================
+   ASIDE — LATERAL DIREITA
+   col-12 col-md-4 está no HTML via Bootstrap.
+   Em mobile: aparece abaixo do main (empilhado).
+   Em desktop: fica ao lado.
+============================================= */
 .lateral-direita {
-    /*width: 300px;*/
-    background: rgba(185, 132, 26, 0.952);
+    background: rgba(185, 132, 26, 0.952); /* dourado */
     padding: 10px;
 }
 
+/* CAIXA DE TAGS (links com imagens) */
 .tags {
     padding: 20px 0;
     border-radius: 3px;
     border: dashed rgb(255, 249, 196) 2px;
     margin-top: 5px;
-    margin-bottom: 20px;
 }
 
-.lateral-direita img {
+/* Imagens dentro das tags centralizadas e com margem */
+.tags img {
     display: block;
-    margin: 20px auto;
+    margin: 15px auto;
     width: 80%;
 }
 
+
 /* NEWSLETTER */
-.Newsletter {
-    padding: 10px;
-    border-radius: 3px;
+.newsletter-box {
+    padding: 15px;
+    border-radius: 5px;
     border: white solid 3px;
+    margin-top: 10px;
 }
 
-.Newsletter h3 {
+.newsletter-box h3 {
     text-align: center;
     color: #ffffff;
+    margin-bottom: 8px;
 }
 
-.Newsletter p {
+.newsletter-box p {
     text-align: justify;
     color: whitesmoke;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
 }
 
-/* FORM */
-form input {
-    width: 100%;
+/* Inputs do formulário: form-control do Bootstrap já estiliza,
+   aqui só ajustamos a margem inferior */
+.newsletter-box .form-control {
     margin-bottom: 8px;
-    padding: 10px;
 }
 
-form button {
-    width: 100%;
-    padding: 6px;
-    background: #000;
-    color: white;
-    border: none;
-}
 
-/* PATROCINADORES */
+/* =============================================
+   PATROCINADORES
+   Fundo cinza, layout em grid via Bootstrap (col-6 col-md-2)
+============================================= */
 .patrocinadores {
     background: #e2e1e1;
-    padding: 15px;
     margin-top: 20px;
 }
-.patrocinadores h2 {
-    margin-bottom: 10px;
-    font-family: Verdana;
-    color: goldenrod;
-    padding: 20px;
-    margin-bottom: 5px;
-}
-/*
-.patrocinadoresinferior {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}*/
 
-.patrocinadoresinferior img {
-   max-width: 100%;
+.patrocinadores img {
+    max-width: 100%;
     height: auto;
 }
 
-/* FOOTER */
-footer {
+
+/* =============================================
+   FOOTER
+   Fundo preto com texto branco centralizado.
+   text-center e py-3 estão no HTML via Bootstrap.
+============================================= */
+.rodape {
     background: #000;
     color: white;
-    text-align: center;
     padding: 15px;
+    text-align: center;
 }
 
-/* RESPONSIVIDADE */
-/*
-@media screen and (max-width: 768px) {
-
-    .container {
-        flex-direction: column;
-        display: flex;
-    }
-
-    .conteudoprincipal {
-        width: 100%;
-        padding: 15px;
-        flex: 1;
-    }
-
-    .introducao {
-        width: 100%;
-        max-width: 100%;
-        padding: 10px 8px;
-        font-size: small;
-        text-align: left;
-        line-height: 1.6;
-
-    }
-
-    .lateral-direita {
-        width: 80%;
-        max-width: 300px;
-        position: sticky;
-        top: 10px;
-        margin: 0 auto;
-        align-self: flex-start;
-
-    }
-
-    .tags {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 50px;
-        padding: 15px;
-    }
-
-    .lateral-direita img {
-        width: 70%;
-        max-width: 180px;
-        padding: 10px 0;
-        display: block;
-        margin: 0 auto;
-
-    }
-
-    .topo-principal {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding: 8px 12px;
-        gap: 10px;
-    }
-
-    .topo-principal img {
-        width: 60px;
-        margin: 10px;
-    }
-
-    .titulo-busca {
-        display: flex;
-        flex-direction: column;
-        margin-left: 0;
-        flex: 1;
-    }
-
-    .topo-principal h1 {
-        font-size: 20px;
-        white-space: nowrap;
-    }
-
-    .topo-principal input {
-        width: 100%;
-        max-width: 180px;
-        padding: 4px 8px;
-        font-size: 12px;
-        margin-top: 4px;
-    }
-
-    .menu-lateral-e ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 1px;
-        justify-content: center;
-        padding: 1px 8px;
-    }
-
-    .menu-lateral-e li:not(:last-child)::after {
-        content: "|";
-        margin-left: 10px;
-    }
-
-    .introducao p {
-        padding: 10px 10px;
-        font-size: small;
-    }
-
-    /*PARTIDAS
-    .partidas h2 {
-        margin: 10px;
-        padding-left: 30px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-
-    .todos-os-cards {
-        margin: 10px;
-        display: grid;
-        flex-direction: column;
-        grid-template-columns: repeat(3, 100px);
-        font-size: smaller;
-        gap: 13px;
-    }
-
-    .todos-os-cards h3 {
-        font-size: small;
-        padding: 5px;
-    }
-
-    .todos-os-cards p {
-        font-size: smaller;
-        padding: 3px;
-        font-style: italic;
-    }
-
-
-    /* NOTICIAS
-    .todos-os-cards article,
-    .todos-os-cards-video article {
-        width: 100%;
-    }
-
-    .noticias {
-        padding-top: 5%;
-    }
-
-    .noticias h2 {
-        margin-top: 10px;
-        font-family: Verdana;
-        color: rgb(238, 189, 56);
-        margin: 10px;
-        padding-left: 30%;
-    }
-
-    .imagensnoticias {
-        padding: 10px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto;
-        gap: 8px;
-        object-fit: contain;
-    }
-
-    /* IMAGENS 
-    .imagensnoticias img {
-        width: 100%;
-        height: auto;
-        border-radius: 5px;
-        object-fit: cover;
-    }
-
-    .imagensnoticias article {
-        grid-column: auto !important;
-        grid-row: auto !important;
-    }
-
-    /* LATERAIS GRANDES
-    .imagensnoticias .noticia01 {
-        grid-column: 1;
-        grid-row: 1 / 2;
-    }
-
-    .imagensnoticias .noticia02 {
-        grid-column: 4;
-        grid-row: 1/2;
-    }
-
-    /*MEIO PEQUENO
-    .imagensnoticias .noticia03 {
-        grid-column: 2;
-        grid-row: 2;
-    }
-
-    .imagensnoticias .noticia04 {
-        grid-column: 3;
-        grid-row: 2;
-    }
-
-    .noticia03,
-    .noticia04 {
-        display: flow-root;
-        width: 100%;
-    }
-
-    /*MEIO HORIZONTAL
-    .imagensnoticias .noticia05 {
-        grid-column: 2/4;
-        grid-row: 1;
-    }
-
-    /*VÍDEOS
-    .videos h2 {
-        margin: 10px;
-        padding-left: 35%;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-
-    .videos h4 {
-        padding: 5px;
-        font-size: smaller;
-        font-style: normal;
-    }
-
-    .todos-os-cards-video article {
-        grid-column: auto !important;
-        grid-row: auto !important;
-    }
-
-    .todos-os-cards-video {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 10px;
-        padding: 10px;
-    }
-
-    .todos-os-cards-video img {
-        border-radius: 8px;
-    }
-
-    .Video01,
-    .Video02,
-    .Video03 {
-        grid-column: 1;
-    }
-
-    .Video04,
-    .Video05,
-    .Video06 {
-        grid-column: 2;
-    }
+.rodape p {
+    margin-bottom: 4px;
+    font-size: 0.9rem;
 }
-    */
+
+.link-footer {
+    color: goldenrod;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.link-footer:hover {
+    text-decoration: underline;
+}
