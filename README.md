@@ -15,5 +15,3 @@ PRINT VERSÃO MOBILE
 ![Print-mobile1](printmobile1.png)
 ![Print-mobile2](printmobile2.png)
 ![Print-mobile3](printmobile3.png)
-![Print-mobile4](printmobile4.png)
-![Print-mobile5](printmobile5.png)

@@ -68,7 +68,6 @@ header {
     gap: 50px;
     padding: 10px;
     flex-wrap: wrap;
-    /* ✅ responsivo */
 }
 
 .menu-lateral-e li {
@@ -93,6 +92,7 @@ header {
 
 /* MAIN */
 .introducao {
+    padding: 20px;
     padding-bottom: 25px;
     text-align: justify;
     color: rgb(85, 82, 82);
@@ -103,18 +103,30 @@ header {
     min-width: 0;
 }
 
+.conteudoprincipal img {
+    width:100%;
+    height:auto;
+}
+
+.conteudoprincipal p {
+    padding: 10px;
+    text-justify: newspaper;
+    color: #999;
+}
+}
 /* PARTIDAS */
 .partidas h2 {
-    margin-bottom: 10px;
+    padding: 20px;
+    margin-bottom: 5px;
     font-family: Verdana;
-    color: rgb(238, 189, 56);
+    color: goldenrod;
 }
 
 .todos-os-cards {
+    padding-left: 25px;
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-    /* ✅ */
 }
 
 .todos-os-cards article {
@@ -124,17 +136,19 @@ header {
 .todos-os-cards img {
     width: 100%;
     border-radius: 5px;
-    border: 3px rgba(250, 216, 123, 0.555) solid;
+    border: 3px rgba(0, 0, 0, 0.555) solid;
 }
 
 /* NOTÍCIAS */
 .noticias h2 {
-    margin-bottom: 10px;
+    padding: 20px;
+    margin-bottom: 5px;
     font-family: Verdana;
-    color: rgb(238, 189, 56);
+    color: goldenrod;
 }
 
 .imagensnoticias {
+    padding-left: 25px;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: 250px 150px;
@@ -177,6 +191,7 @@ header {
     height: 100%;
     object-fit: cover;
     border-radius: 5px;
+    border: 3px rgba(0, 0, 0, 0.555) solid;
 }
 
 /* VÍDEOS */
@@ -187,10 +202,13 @@ header {
 .videos h2 {
     margin-bottom: 10px;
     font-family: Verdana;
-    color: rgb(238, 189, 56);
+    color: goldenrod;
+    padding: 20px;
+    margin-bottom: 5px;
 }
 
 .todos-os-cards-video {
+    padding-left: 25px;
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
@@ -213,16 +231,18 @@ header {
 
 .tags {
     border-radius: 3px;
-    border: dashed white 2px;
+    border: dashed rgb(255, 249, 196) 2px;
     padding-bottom: 200px;
     margin-top: 5px;
     margin-bottom: 20px;
 }
 
 .lateral-direita img {
-    width: 70%;
-    padding: 40px 10px;
+    width: 80%;
+    padding: 60px 10px;
+    padding-left: 50px;
     align-items: center;
+    margin: 0 auto;
 }
 
 /* NEWSLETTER */
@@ -259,9 +279,16 @@ form button {
 
 /* PATROCINADORES */
 .patrocinadores {
-    background: #eee;
+    background: #e2e1e1;
     padding: 15px;
     margin-top: 20px;
+}
+.patrocinadores h2 {
+    margin-bottom: 10px;
+    font-family: Verdana;
+    color: goldenrod;
+    padding: 20px;
+    margin-bottom: 5px;
 }
 
 .patrocinadoresinferior {
